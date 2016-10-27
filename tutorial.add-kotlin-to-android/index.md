@@ -51,9 +51,9 @@ this section is a walk through about configuring an existing Android project to 
 
 **this walk through assumes that the project only contains a single *sub project* AKA *module* named *app*.** you will need to repeat this walk through for each module that you want to use Kotlin in. typically, all modules of an Android project are listed in *[projectRoot]/settings.gradle*.
 
-1. add the *Kotlin gradle plugin* to the project; **add the lines 1-9 and 12 from below to *[projectRoot]/app/build.gradle***:
+1. add the *Kotlin gradle plugin* to the project; **replicate the commit shown below in *[projectRoot]/app/build.gradle***:
 
-    <script src="https://gist.github.com/ericytsang/6a1264a58cf1a6743ba692b9e5046c78.js"></script>
+    [![commit](http://i.imgur.com/yA01QoJ.png)](https://github.com/ericytsang/tutorial.add-kotlin-to-android/commit/2bb88a0957d2a695c4a2a5496dfb11ce57ae0716)
 
     here's some relevant information about Gradle:
 
