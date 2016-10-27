@@ -1,0 +1,99 @@
+<h1>Learning Goals</h1>
+
+<p>after completing this tutorial, you will:</p>
+
+<ul>
+<li>be able to configure Android projects to use Kotlin</li>
+<li>have a better understanding of Kotlin</li>
+<li>have a better understanding of Gradle</li>
+<li>have a better understanding of Android</li>
+</ul>
+
+<h1>Steps Outline</h1>
+
+<p>here is a high level ordered list of the steps of this tutorial:</p>
+
+<ol>
+<li>downloading the Kotlin plugin for Android Studio</li>
+<li>configure an existing project to be able to use Kotlin</li>
+<li>convert existing Java code to Kotlin</li>
+</ol>
+
+<h1>Tutorial</h1>
+
+<p>this section contains a detailed walk through about configuring existing Android projects to enable programming in Kotlin for them.</p>
+
+<p>code from tutorial is available in <a href="https://github.com/ericytsang/tutorial.add-kotlin-to-android">this github repository</a> of a Hello World app whose MainActivity is written in Kotlin.</p>
+
+<h2>1. downloading the Kotlin plugin for Android Studio</h2>
+
+<p>this section is a walk through about downloading and installing the <em>Kotlin plugin</em> for <em>Android Studio</em>:</p>
+
+<ol>
+<li>open <strong>Android Studio</strong>.</li>
+<li><p>go to <strong>File > Settings... > Plugins > Browse repositories...</strong></p>
+
+<p><img src="http://i.imgur.com/YgP8Bo9.png" alt="File > Settings... > Plugins > Browse repositories..." title="" /></p></li>
+<li><p>search for <strong>Kotlin</strong>, select it then select insall.</p>
+
+<p><img src="http://i.imgur.com/VfPY1ro.png" alt="installing the Kotlin plugin" title="" /></p></li>
+<li><p>after the plugin is installed, restart Android Studio. sometimes Android Studio fails to restart itself, so you may need to do it manually...</p>
+
+<p><img src="http://i.imgur.com/SF8kfII.png" alt="restarting Android Studio" title="" /></p></li>
+<li><p>Done!</p></li>
+</ol>
+
+<h2>2. configure an existing project to be able to use Kotlin</h2>
+
+<p>this section is a walk through about configuring an existing Android project to be able to use Kotlin. after finishing the tutorial:</p>
+
+<ul>
+<li>you can program in Kotlin for the project.</li>
+<li>you can use Kotlin's standard library functions (that extends Java's standard library) for the project.</li>
+<li>it is still possible to program in Java for the project.</li>
+<li>you can mix both Kotlin code and Java code in the same project.</li>
+</ul>
+
+<p><strong>this walk through assumes that the project only contains a single <em>sub project</em> AKA <em>module</em> named <em>app</em>.</strong> you will need to repeat this walk through for each module that you want to use Kotlin in. typically, all modules of an Android project are listed in <em>[projectRoot]/settings.gradle</em>.</p>
+
+<ol>
+<li><p>add the <em>Kotlin gradle plugin</em> to the project; <strong>add the lines 1-9 and 12 from below to <em>[projectRoot]/app/build.gradle</em></strong>:</p>
+
+<script src="https://gist.github.com/ericytsang/6a1264a58cf1a6743ba692b9e5046c78.js"></script>
+
+<p>here's some relevant information about Gradle:</p>
+
+<ul><li><p>the <strong>buildscript block</strong> lets us configure Gradle's compile time environment.</p></li>
+<li><p>the <strong>dependencies block</strong> lets us specify modules that the project depends on. in this case, it is specifying the compile time dependencies.</p></li>
+<li><p>the <strong>repositories block</strong> lets us specify where Gradle should search to find the dependencies listed in the <em>dependencies block</em>. in this case, it is specifying where Gradle should for compile time dependencies.</p></li>
+<li><p>the <strong>apply plugin</strong> clause tells Gradle to apply a <strong>Gradle plugin</strong> to the project.</p></li>
+<li><p><strong>Gradle plugins</strong> are used to extend the capabilities of a Gradle project. a Gradle Plugin can:</p>
+
+<ul><li>define new kinds of DSL elements (e.g. buildscript block, dependencies block, repositories block)</li>
+<li>define new or default tasks to tell Gradle how to do various things like running unit tests, compiling the project and installing apps into connected devices.</li>
+<li>define and enforce a standard file structure.</li></ul></li></ul></li>
+<li><p>add the Kotlin standard libraries as dependencies for the project; <strong>add lines 39-40 from below to <em>[projectRoot]/app/build.gradle</em></strong>. this will allow you to use Kotlin standard library functions in the project.</p>
+
+<script src="https://gist.github.com/ericytsang/4fbc6312a6abb6efce3cfc308cee2e04.js?slice=20-30"></script>
+
+<p>in this case, the <em>dependencies block</em> from lines 33 to 42 configure the dependencies of the project; adding entries to this block makes more classes available to you when you program your Android app.</p></li>
+<li><p>this step is optional. set the Java source and target compatibility versions to 1.6; <strong>add the lines 31-34 from below to <em>[projectRoot]/app/build.gradle</em></strong>.</p>
+
+<script src="https://gist.github.com/ericytsang/8ce321b253e52d133fba6522a3e5fa23.js"></script>
+
+<p>Kotlin is compatible with all JREs from version 6 and up. this will let you lower your minimum SDK version to target older versions of Android and make your app available to more Android users. doing this would make some Java standard library classes and Java language features unavailable; however, all of Kotlin's standard library classes and language features will remain available.</p></li>
+</ol>
+
+<h2>3. convert existing Java code to Kotlin</h2>
+
+<ol>
+<li><p>select all the Java files you would like to convert to Kotlin in the <em>Project view</em>.</p>
+
+<p><img src="http://i.imgur.com/rfERSpa.png" alt="selecting java files" title="" /></p></li>
+<li><p>select <strong>Code > Comvert Java File to Kotlin File</strong> in the menubar.</p>
+
+<p><img src="http://i.imgur.com/KdyVMzI.png" alt="Code > Comvert Java File to Kotlin File" title="" /></p></li>
+<li><p>tada!</p>
+
+<p><img src="http://i.imgur.com/f2s6Mzo.png" alt="kotlin code" title="" /></p></li>
+</ol>
