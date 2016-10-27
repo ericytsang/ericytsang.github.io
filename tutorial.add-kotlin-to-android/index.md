@@ -73,15 +73,15 @@ this section is a walk through about configuring an existing Android project to 
 
         * define and enforce a standard file structure.
 
-2. add the Kotlin standard libraries as dependencies for the project; **add lines 39-40 from below to *[projectRoot]/app/build.gradle***. this will allow you to use Kotlin standard library functions in the project.
+2. add the Kotlin standard libraries as dependencies for the project; **replicate the commit shown below in *[projectRoot]/app/build.gradle***. this will allow you to use Kotlin standard library functions in the project.
 
-    <script src="https://gist.github.com/ericytsang/4fbc6312a6abb6efce3cfc308cee2e04.js"></script>
+    [![commit](http://i.imgur.com/kpygUMS.png)](https://github.com/ericytsang/tutorial.add-kotlin-to-android/commit/f358e1a5d27113010e836df9046163af62ba4147)
 
     in this case, the *dependencies block* from lines 33 to 42 configure the dependencies of the project; adding entries to this block makes more classes available to you when you program your Android app.
 
-3. this step is optional. set the Java source and target compatibility versions to 1.6; **add the lines 31-34 from below to *[projectRoot]/app/build.gradle***.
+3. this step is optional. set the Java source and target compatibility versions to 1.6; **replicate the commit shown below in *[projectRoot]/app/build.gradle***.
 
-    <script src="https://gist.github.com/ericytsang/8ce321b253e52d133fba6522a3e5fa23.js"></script>
+    [![commit](http://i.imgur.com/nlr7pRw.png)](https://github.com/ericytsang/tutorial.add-kotlin-to-android/commit/8a743941ce24188ea405e331b7af7ec85b56c2e7)
 
     Kotlin is compatible with all JREs from version 6 and up. this will let you lower your minimum SDK version to target older versions of Android and make your app available to more Android users. doing this would make some Java standard library classes and Java language features unavailable; however, all of Kotlin's standard library classes and language features will remain available.
 
