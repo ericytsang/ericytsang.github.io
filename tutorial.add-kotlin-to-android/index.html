@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="https://sindresorhus.com/github-markdown-css/github-markdown.css"/>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/showdownjs/showdown/1.4.3/dist/showdown.min.js"></script>
+
+<script type="text/javascript">
+function httpGet(theUrl)
+{
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest();
+    }
+
+    // code for IE6, IE5
+    else
+    {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    // xmlhttp.onreadystatechange=function()
+    // {
+    //     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    //     {
+    //         return xmlhttp.responseText;
+    //     }
+    // }
+    xmlhttp.open("GET",theUrl,false);
+    xmlhttp.send();
+    return xmlhttp.responseText;
+}
+
+var converter = new showdown.Converter();
+var text = httpGet("./index.md");
+document.body.innerHTML = converter.makeHtml(text);
+</script>
+
+</head>
+<body class="markdown-body"></body>
+</html>
