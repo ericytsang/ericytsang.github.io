@@ -91,7 +91,7 @@ this section is a walk through about configuring an existing Android project to 
 
     ![selecting java files](http://i.imgur.com/rfERSpa.png)
 
-2. select **Code > Comvert Java File to Kotlin File** in the menubar.
+2. select **Code > Convert Java File to Kotlin File** in the menubar.
 
     ![Code > Comvert Java File to Kotlin File](http://i.imgur.com/KdyVMzI.png)
 
