@@ -28,15 +28,15 @@ this section is a walk through about downloading and installing the *Kotlin plug
 1. open **Android Studio**.
 2. go to **File > Settings... > Plugins > Browse repositories...**
 
-    ![File > Settings... > Plugins > Browse repositories...](http://i.imgur.com/YgP8Bo9.png)
+    [![File > Settings... > Plugins > Browse repositories...](http://i.imgur.com/YgP8Bo9.png)](http://i.imgur.com/YgP8Bo9.png)
 
 3. search for **Kotlin**, select it then select insall.
 
-    ![installing the Kotlin plugin](http://i.imgur.com/VfPY1ro.png)
+    [![installing the Kotlin plugin](http://i.imgur.com/VfPY1ro.png)](http://i.imgur.com/VfPY1ro.png)
 
 4. after the plugin is installed, restart Android Studio. sometimes Android Studio fails to restart itself, so you may need to do it manually...
 
-    ![restarting Android Studio](http://i.imgur.com/SF8kfII.png)
+    [![restarting Android Studio](http://i.imgur.com/SF8kfII.png)](http://i.imgur.com/SF8kfII.png)
 
 5. Done!
 
@@ -89,12 +89,12 @@ this section is a walk through about configuring an existing Android project to 
 
 1. select all the Java files you would like to convert to Kotlin in the *Project view*.
 
-    ![selecting java files](http://i.imgur.com/rfERSpa.png)
+    [![selecting java files](http://i.imgur.com/rfERSpa.png)](http://i.imgur.com/rfERSpa.png)
 
 2. select **Code > Convert Java File to Kotlin File** in the menubar.
 
-    ![Code > Comvert Java File to Kotlin File](http://i.imgur.com/KdyVMzI.png)
+    [![Code > Comvert Java File to Kotlin File](http://i.imgur.com/KdyVMzI.png)](http://i.imgur.com/KdyVMzI.png)
 
 3. tada!
 
-    ![kotlin code](http://i.imgur.com/f2s6Mzo.png)
+    [![kotlin code](http://i.imgur.com/f2s6Mzo.png)](http://i.imgur.com/f2s6Mzo.png)
