@@ -129,7 +129,7 @@ var content = R.element.content;
 content.innerHTML = converter.makeHtml(text);
 
 // if contenturl is the index.md, process the lings in it as well
-if (getParameters.contenturl.contains("index.md"))
+if (getParameters.contenturl.indexOf("index.md") != -1)
 {
     var descendants = R.element.content.getElementsByTagName('a');
     for (var i = -1, l = descendants.length; ++i < l;)
