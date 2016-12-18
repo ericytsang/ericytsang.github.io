@@ -1,0 +1,142 @@
+body
+{
+    margin: 0px;
+}
+
+/* content */
+
+#content
+{
+    z-index: 0;
+    padding: 8px;
+}
+
+/* navigation drawer */
+
+#navdrawer
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+
+    border-right: 1px solid #ddd;
+    background: #eee;
+    width: 300px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-transition: 0.5s; /* Safari */
+    transition: 0.5s;
+}
+
+#navdrawer.opened
+{
+    left: 0px;
+    outline: 0px;
+}
+
+#navdrawer.closed
+{
+    left: -300px;
+}
+
+#navdrawer>.toolbar
+{
+    margin-bottom: 8px;
+}
+
+/* navigation drawer list items */
+
+.collapsibleList>li
+{
+    list-style: none;
+    cursor: auto;
+}
+
+.collapsibleList>li li
+{
+    list-style-image: url(./images/ic_subdirectory_arrow_right_black_24dp_1x.png);
+    cursor: auto;
+}
+
+.collapsibleList li a
+{
+    display: block;
+}
+
+.collapsibleList li a:hover
+{
+    background: #ccc;
+}
+
+.collapsibleList li.collapsibleListOpen
+{
+    list-style-image: url(./images/ic_expand_less_black_24dp_1x.png);
+    cursor: pointer;
+}
+
+.collapsibleList li.collapsibleListClosed{
+    list-style-image: url(./images/ic_expand_more_black_24dp_1x.png);
+    cursor: pointer;
+}
+
+.selected
+{
+    background: #ccc;
+}
+
+/* tool bar */
+
+.toolbar
+{
+    right: 0;
+    left: 0;
+    padding: 8px;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.toolbar *
+{
+    vertical-align: middle;
+}
+
+/* navigation bar */
+
+#navbar
+{
+    position: fixed;
+    z-index: 100;
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+}
+
+/* general */
+
+button
+{
+    background: rgba(0,0,0,0);
+    padding: 0px;
+    border: none;
+    -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+}
+
+button:hover
+{
+    background: rgba(0,0,0,0.2);
+}
+
+button:active
+{
+    background: rgba(255,255,255,0.1);
+    -webkit-transition: 0.1s; /* Safari */
+    transition: 0.1s;
+}
+
+button:focus
+{
+    outline: 0;
+}
