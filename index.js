@@ -40,11 +40,13 @@ function toggleNavDrawer()
     {
         R.element.navdrawer.classList.add(R.class.opened);
         R.element.navdrawer.classList.remove(R.class.closed);
+        localStorage.navdrawerstate=R.class.opened
     }
     else
     {
         R.element.navdrawer.classList.remove(R.class.opened);
         R.element.navdrawer.classList.add(R.class.closed);
+        localStorage.navdrawerstate=R.class.closed
     }
     return true;
 }
@@ -104,6 +106,14 @@ var descendants = R.element.navdrawercontent.getElementsByTagName('ul');
 for (var i = -1, l = descendants.length; ++i < l;)
 {
     descendants[i].classList.add(R.class.collapsibleList);
+}
+
+// restore navigation drawer state from local storage
+if (localStorage.navdrawerstate != null)
+{
+    R.element.navdrawer.classList.remove(R.class.closed);
+    R.element.navdrawer.classList.remove(R.class.opened);
+    R.element.navdrawer.classList.add(localStorage.navdrawerstate);
 }
 
 // parse parameters
@@ -166,4 +176,7 @@ for (var i = descendants.length - 1; i >= 0; i--)
 }
 
 // close the navigation drawer. the navigation drawer starts as opened. but closes upon loading to create a more seamless navigation experience
-setTimeout(toggleNavDrawer,50);
+if (R.element.navdrawer.classList.contains(R.class.opened))
+{
+    setTimeout(toggleNavDrawer,50);
+}
