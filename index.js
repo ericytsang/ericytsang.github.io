@@ -128,6 +128,18 @@ var text = httpGet(getParameters.contenturl);
 var content = R.element.content;
 content.innerHTML = converter.makeHtml(text);
 
+// if contenturl is the index.md, process the lings in it as well
+if (getParameters.contenturl.contains("index.md"))
+{
+    var descendants = R.element.content.getElementsByTagName('a');
+    for (var i = -1, l = descendants.length; ++i < l;)
+    {
+        descendants[i].href = "./index.html"+
+            "?"+R.getparamkeys.contenturl+"="+descendants[i].href+
+            "&"+R.getparamkeys.pagetitle+"="+descendants[i].text;
+    }
+}
+
 // do the collapsible list processing to change collapsible lists to collapsible lists
 CollapsibleLists.apply();
 
