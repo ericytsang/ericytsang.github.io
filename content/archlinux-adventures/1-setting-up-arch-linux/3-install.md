@@ -57,7 +57,7 @@ this section has instructions for using `cfdisk` to partition the host computer 
 5. use the `Type` command to change the types of the allocated partitions to their appropriate types.
 6. use the `Write` command to commit and apply your changes to the host computer's partition table.
 
-    [![writing to the partition table](http://i.imgur.com/RURK22V.jpg)](http://i.imgur.com/RURK22V.jpg)
+    [![writing to the partition table](http://i.imgur.com/nzZKzIN.jpg)](http://i.imgur.com/nzZKzIN.jpg)
 
 7. use the `Quit` command to exit `cfdisk`.
 
@@ -99,7 +99,7 @@ follow the steps below to set up an Internet connection:
 
         # ping 8.8.8.8
 
-    [![ping 8.8.8.8](http://i.imgur.com/DUZCSjd.jpg?1)](http://i.imgur.com/DUZCSjd.jpg?1)
+    [![ping 8.8.8.8](http://i.imgur.com/h2hm6u5.jpg?1)](http://i.imgur.com/h2hm6u5.jpg?1)
 
 ## Example Netctl Profile (`/etc/netctl/default`)
 
