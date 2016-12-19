@@ -8,5 +8,6 @@
         * [Install Arch Linux](./content/archlinux-adventures/1-setting-up-arch-linux/3-install.md)
         * [What's Next?](./content/archlinux-adventures/1-setting-up-arch-linux/4-whats-next.md)
     * Systemd Services
+        * [Service Basics](./content/archlinux-adventures/2-systemd-services/1-startup-service.md)
     * [Tips and Tricks](./content/archlinux-adventures/tips-and-tricks.md)
 * [Site Map](./index.md)
