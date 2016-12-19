@@ -1,12 +1,12 @@
-# overview
+# Overview
 
-the sections in this page covers:
+the sections in this page cover:
 
 1. acquiring the Arch Linux ISO
 2. creating a bootable Arch Linux USB (with the ISO)
 3. verifying the bootable Arch Linux USB setup
 
-# acquiring the Arch Linux ISO
+# Acquiring the Arch Linux ISO
 
 grab the BitTorrent for the Arch Linux ISO from [the official Arch Linux wiki download page](https://www.archlinux.org/download/)!
 
@@ -14,7 +14,7 @@ i use [qbitorrent](http://www.qbittorrent.org/download.php) to download BitTorre
 
 [![qtorrent in action](http://i.imgur.com/Be8k1FH.png)](http://i.imgur.com/Be8k1FH.png)
 
-# creating a bootable Arch Linux USB
+# Creating a Bootable Arch Linux USB
 
 [Rufus](https://rufus.akeo.ie/) is used in this tutorial to create the bootable USB media:
 
@@ -39,7 +39,7 @@ i use [qbitorrent](http://www.qbittorrent.org/download.php) to download BitTorre
 
     [![Rufus finished formatting USB](http://i.imgur.com/KfCF4C5.png)](http://i.imgur.com/KfCF4C5.png)
 
-# verify the bootable Arch Linux USB setup
+# Verify the Bootable Arch Linux USB Setup
 
 verify that the bootable Arch Linux USB has been set up properly:
 
@@ -48,4 +48,8 @@ verify that the bootable Arch Linux USB has been set up properly:
 
         # ls /sys/firmware/efi/efivars
 
-    if the directory exists and the command succeeds, you're good to go! proceed to [the next page](./index.html?contenturl=./content/archlinux-adventures/1-setting-up-arch-linux/3-prepare-2-install.md&pagetitle=Prepare%20to%20Install...) when ready.
+    below is an image of running the command on my machine.
+
+    [![UEFI booting verified](http://i.imgur.com/bXnnUmL.jpg)](http://i.imgur.com/bXnnUmL.jpg)
+
+    if you get a similar result indicating that the directory exists and the command succeeded, you're good to go! proceed to [the next page](./index.html?contenturl=./content/archlinux-adventures/1-setting-up-arch-linux/3-prepare-2-install.md&pagetitle=Prepare%20to%20Install...) when ready.
