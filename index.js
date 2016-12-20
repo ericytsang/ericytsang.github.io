@@ -3,6 +3,7 @@ var R = {
         opened: "opened",
         closed: "closed",
         selected: "selected",
+        overlay: "overlay",
         collapsibleList: "collapsibleList",
         collapsibleListClosed: "collapsibleListClosed",
         collapsibleListOpen: "collapsibleListOpen"
@@ -11,7 +12,8 @@ var R = {
         navdrawer: document.getElementById("navdrawer"),
         navdrawercontent: document.getElementById("navdrawercontent"),
         title: document.getElementById("title"),
-        content: document.getElementById("content")
+        content: document.getElementById("content"),
+        overlay: document.getElementById("overlay")
     },
     getparamkeys: {
         contenturl: "contenturl",
@@ -36,17 +38,22 @@ function httpGet(url)
 
 function toggleNavDrawer()
 {
+    // open the navigation drawer if it is closed
     if (R.element.navdrawer.classList.contains(R.class.closed))
     {
         R.element.navdrawer.classList.add(R.class.opened);
         R.element.navdrawer.classList.remove(R.class.closed);
-        localStorage.navdrawerstate=R.class.opened
+        R.element.overlay.classList.add(R.class.overlay);
+        localStorage.navdrawerstate=R.class.opened;
     }
+
+    // close the navigation drawer if it is opened
     else
     {
         R.element.navdrawer.classList.remove(R.class.opened);
         R.element.navdrawer.classList.add(R.class.closed);
-        localStorage.navdrawerstate=R.class.closed
+        R.element.overlay.classList.remove(R.class.overlay);
+        localStorage.navdrawerstate=R.class.closed;
     }
     return true;
 }
