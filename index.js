@@ -86,6 +86,35 @@ function parseGetParameters(url)
     return query_string;
 }
 
+function loadContentMdAsHtml(markdownUrl)
+{
+    // generate html from the markdown
+    var converter = new showdown.Converter();
+    var markdown = httpGet(markdownUrl);
+    var html = converter.makeHtml(markdown);
+
+    // put the html into a temporary container so we can manipulate it then
+    // extract the result
+    var tempHtmlContainer = document.createElement("div");
+    tempHtmlContainer.innerHTML = html;
+
+    // replace all links to ./content/*.md with a link to ./index.html with the
+    // appropriate http get parameters
+    var aTags = tempHtmlContainer.getElementsByTagName('a');
+    for (var i = aTags.length - 1; i >= 0; i--)
+    {
+        aTag = aTags[i];
+        if (aTag.href.match(RegExp(window.location.host+"/content/.*\.md")).length > 0)
+        {
+            aTag.href = "./index.html"+
+                "?"+R.getparamkeys.contenturl+"="+aTags[i].href+
+                "&"+R.getparamkeys.pagetitle+"="+aTags[i].text;
+        }
+    }
+
+    return tempHtmlContainer.innerHTML;
+}
+
 var converter = new showdown.Converter();
 
 // populate navigation drawer with content
@@ -126,8 +155,6 @@ if (getParameters.contenturl == null)
     window.location = descendants[0].href;
     getParameters.contenturl = parseGetParameters().contenturl;
     getParameters.pagetitle = descendants[0].text;
-    console.log(getParameters.contenturl);
-    console.log(getParameters.pagetitle);
 }
 
 // set title from parameters
@@ -138,7 +165,7 @@ var text = httpGet(getParameters.contenturl);
 var content = R.element.content;
 content.innerHTML = converter.makeHtml(text);
 
-// if contenturl is the index.md, process the lings in it as well
+// if contenturl is the index.md, process the links in it as well
 if (getParameters.contenturl.indexOf("index.md") != -1)
 {
     var descendants = R.element.content.getElementsByTagName('a');
