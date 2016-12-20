@@ -10,7 +10,7 @@
 ## Outcome
 
 This section walks through creating a service named `myservice` that shall:
-- be declared in the directory (`/etc/systemd/system`) where other administrator-declared services should be declared.
+- have a **unit file** (`/etc/systemd/system/myservice.service`) so the system can handle the service properly.
 - use a **configuration file** (`/etc/myservice.conf`) to pass information to it.
 - execute a **start script** (`/usr/bin/myservice/start.sh`) upon **service start up**
 - execute a **stop script** (`/usr/bin/myservice/stop.sh`) upon **service shut down**

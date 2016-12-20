@@ -9,5 +9,7 @@
         * [What's Next?](./content/archlinux-adventures/1-setting-up-arch-linux/4-whats-next.md)
     * Systemd Services
         * [Service Basics](./content/archlinux-adventures/2-systemd-services/1-startup-service.md)
-    * [Tips and Tricks](./content/archlinux-adventures/tips-and-tricks.md)
+    * Miscellaneous
+        * [Bluetooth](./content/archlinux-adventures/3-miscellaneous/bluetooth.md)
+        * [Tips and Tricks](./content/archlinux-adventures/3-miscellaneous/tips-and-tricks.md)
 * [Site Map](./index.md)
