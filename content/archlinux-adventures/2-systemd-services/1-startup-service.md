@@ -7,7 +7,7 @@
 
 # Baking Custom Services
 
-This section will walk through creating your own service:
+This section will walk through creating your own service that will run its **start script** upon **service start up**, and **stop script** upon **service shut down**. all running services are stopped upon system shutdown:
 
 1. think of a name for your service. `myservice` will be used as the name of our newfangled custom service for this tutorial.
 2. create the `myservice.service` service unit file in the `/etc/systemd/system` directory:
