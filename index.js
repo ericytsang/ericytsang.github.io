@@ -104,38 +104,27 @@ function loadContentMdAsHtml(markdownUrl)
     for (var i = aTags.length - 1; i >= 0; i--)
     {
         aTag = aTags[i];
-        if (aTag.href.match(RegExp(window.location.host+"/content/.*\.md")).length > 0)
+        if (aTag.href.match(RegExp(window.location.host+"/.*\.md")) != null)
         {
             aTag.href = "./index.html"+
-                "?"+R.getparamkeys.contenturl+"="+aTags[i].href+
-                "&"+R.getparamkeys.pagetitle+"="+aTags[i].text;
+                "?"+R.getparamkeys.contenturl+"="+aTag.href+
+                "&"+R.getparamkeys.pagetitle+"="+aTag.text;
         }
     }
 
     return tempHtmlContainer.innerHTML;
 }
 
-var converter = new showdown.Converter();
+///////////////////////
+// navigation drawer //
+///////////////////////
 
 // populate navigation drawer with content
-var text = httpGet("./index.md");
-R.element.navdrawercontent.innerHTML = converter.makeHtml(text);
+R.element.navdrawercontent.innerHTML = loadContentMdAsHtml("./index.md");
 
-// post-process all links in the navigation drawer
-var descendants = R.element.navdrawercontent.getElementsByTagName('a');
-for (var i = -1, l = descendants.length; ++i < l;)
-{
-    descendants[i].href = "./index.html"+
-        "?"+R.getparamkeys.contenturl+"="+descendants[i].href+
-        "&"+R.getparamkeys.pagetitle+"="+descendants[i].text;
-}
-
-// post-process all uls in the navigation drawer
-var descendants = R.element.navdrawercontent.getElementsByTagName('ul');
-for (var i = -1, l = descendants.length; ++i < l;)
-{
-    descendants[i].classList.add(R.class.collapsibleList);
-}
+// make the list in the navigation drawer into a collapsible list
+R.element.navdrawercontent.firstChild.classList.add(R.class.collapsibleList);
+CollapsibleLists.applyTo(R.element.navdrawercontent,false);
 
 // restore navigation drawer state from local storage
 if (localStorage.navdrawerstate != null)
@@ -144,41 +133,6 @@ if (localStorage.navdrawerstate != null)
     R.element.navdrawer.classList.remove(R.class.opened);
     R.element.navdrawer.classList.add(localStorage.navdrawerstate);
 }
-
-// parse parameters
-var getParameters = parseGetParameters()
-
-// if no parameters are parsed, substitute them
-var descendants = R.element.navdrawercontent.getElementsByTagName('a');
-if (getParameters.contenturl == null)
-{
-    window.location = descendants[0].href;
-    getParameters.contenturl = parseGetParameters().contenturl;
-    getParameters.pagetitle = descendants[0].text;
-}
-
-// set title from parameters
-R.element.title.innerHTML = getParameters.pagetitle;
-
-// populate content area with specified content from parameters
-var text = httpGet(getParameters.contenturl);
-var content = R.element.content;
-content.innerHTML = converter.makeHtml(text);
-
-// if contenturl is the index.md, process the links in it as well
-if (getParameters.contenturl.indexOf("index.md") != -1)
-{
-    var descendants = R.element.content.getElementsByTagName('a');
-    for (var i = -1, l = descendants.length; ++i < l;)
-    {
-        descendants[i].href = "./index.html"+
-            "?"+R.getparamkeys.contenturl+"="+descendants[i].href+
-            "&"+R.getparamkeys.pagetitle+"="+descendants[i].text;
-    }
-}
-
-// do the collapsible list processing to change collapsible lists to collapsible lists
-CollapsibleLists.apply();
 
 // highlight current entry in the navigation drawer
 var descendants = R.element.navdrawercontent.getElementsByTagName('a');
@@ -202,8 +156,31 @@ for (var i = descendants.length - 1; i >= 0; i--)
     }
 }
 
-// close the navigation drawer. the navigation drawer starts as opened. but closes upon loading to create a more seamless navigation experience
+// close the navigation drawer. the navigation drawer starts as opened. but
+// closes upon loading to create a more seamless navigation experience
 if (R.element.navdrawer.classList.contains(R.class.opened))
 {
     setTimeout(toggleNavDrawer,50);
 }
+
+////////////////////////////
+// page title and content //
+////////////////////////////
+
+// parse parameters
+var getParameters = parseGetParameters()
+
+// if no parameters are parsed, substitute them
+var descendants = R.element.navdrawercontent.getElementsByTagName('a');
+if (getParameters.contenturl == null)
+{
+    window.location = descendants[0].href;
+    getParameters.contenturl = parseGetParameters().contenturl;
+    getParameters.pagetitle = descendants[0].text;
+}
+
+// set title from parameters
+R.element.title.innerHTML = getParameters.pagetitle;
+
+// populate content area with specified content from parameters
+content.innerHTML = loadContentMdAsHtml(getParameters.contenturl);
