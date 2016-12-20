@@ -73,12 +73,12 @@ body
 
 .collapsibleList li.collapsibleListOpen
 {
-    list-style-image: url(./images/ic_expand_less_black_24dp_1x.png);
+    list-style-image: url(./images/ic_expand_more_black_24dp_1x.png);
     cursor: pointer;
 }
 
 .collapsibleList li.collapsibleListClosed{
-    list-style-image: url(./images/ic_expand_more_black_24dp_1x.png);
+    list-style-image: url(./images/ic_expand_less_black_24dp_1x.png);
     cursor: pointer;
 }
 
