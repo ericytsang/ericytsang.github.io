@@ -5,9 +5,9 @@
 - `systemctl stop [service]` - immediately `stop` the _`[service]`_.
 - `systemctl restart [service]` - immediately `stop` (if running) then `start` the _`[service]`_.
 
-# Baking Custom Services
+# Creating a Custom Service
 
-## Learning Outcome
+## Learning Outcomes
 
 This section walks through creating a service named `myservice` that shall:
 - have a **unit file** (`/etc/systemd/system/myservice.service`) so the system can handle the service properly.
