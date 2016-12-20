@@ -7,13 +7,14 @@
 
 # Baking Custom Services
 
-## Outcome
+## Learning Outcome
 
 This section walks through creating a service named `myservice` that shall:
 - have a **unit file** (`/etc/systemd/system/myservice.service`) so the system can handle the service properly.
 - use a **configuration file** (`/etc/myservice.conf`) to pass information to it.
 - execute a **start script** (`/usr/bin/myservice/start.sh`) upon **service start up**
 - execute a **stop script** (`/usr/bin/myservice/stop.sh`) upon **service shut down**
+- optionally be started by the system upon boot up.
 
 _note: all running services are stopped upon system shutdown_
 
