@@ -133,14 +133,6 @@ R.element.navdrawercontent.innerHTML = loadContentMdAsHtml("./index.md");
 R.element.navdrawercontent.firstChild.classList.add(R.class.collapsibleList);
 CollapsibleLists.applyTo(R.element.navdrawercontent,false);
 
-// restore navigation drawer state from local storage
-if (localStorage.navdrawerstate != null)
-{
-    R.element.navdrawer.classList.remove(R.class.closed);
-    R.element.navdrawer.classList.remove(R.class.opened);
-    R.element.navdrawer.classList.add(localStorage.navdrawerstate);
-}
-
 // highlight current entry in the navigation drawer
 var descendants = R.element.navdrawercontent.getElementsByTagName('a');
 for (var i = descendants.length - 1; i >= 0; i--)
@@ -163,8 +155,16 @@ for (var i = descendants.length - 1; i >= 0; i--)
     }
 }
 
-// close the navigation drawer. the navigation drawer starts as opened. but
-// closes upon loading to create a more seamless navigation experience
+// restore navigation drawer state from local storage
+if (localStorage.navdrawerstate != null)
+{
+    R.element.navdrawer.classList.remove(R.class.closed);
+    R.element.navdrawer.classList.remove(R.class.opened);
+    R.element.navdrawer.classList.add(localStorage.navdrawerstate);
+}
+
+// close the navigation drawer if it is open to create a more seamless
+// navigation experience.
 if (R.element.navdrawer.classList.contains(R.class.opened))
 {
     setTimeout(toggleNavDrawer,50);
