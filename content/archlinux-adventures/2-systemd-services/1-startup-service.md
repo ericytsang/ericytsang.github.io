@@ -51,24 +51,30 @@ This section will walk through creating your own service that will run its **sta
         > #!/bin/bash
         > echo "param_foo is $1 and param_bar is $2. service has started."
         > EOF
+        # chmod 755 /usr/bin/myservice/start.sh
 
     the start script logs a message involving some command-line arguments.
 
-4. create the `stop.sh` stop script that is run upon stopping the service in the `/usr/bin/myservice` directory.
+5. create the `stop.sh` stop script that is run upon stopping the service in the `/usr/bin/myservice` directory.
 
         # cat << EOF > /usr/bin/myservice/stop.sh
         > #!/bin/bash
         > echo "param_foo is $1 and param_bar is $2. service has stopped."
         > EOF
+        # chmod 755 /usr/bin/myservice/stop.sh
 
     the stop script logs a message involving some command-line arguments.
 
-5. start the service then check the status of the service to make sure that the service has started correctly.
+6. start the service then check the status of the service to make sure that the service has started correctly.
 
         # systemctl start myservice
         # systemctl status myservice
 
-6. stop the service then check the status of the service to make sure that the service has stopped correctly.
+7. stop the service then check the status of the service to make sure that the service has stopped correctly.
 
         # systemctl stop myservice
         # systemctl status myservice
+
+8.  congratulations! :) you've just created yourself a service. consider enabling to automatically start up the service upon system boot up.
+
+        # systemctl enable myservice
