@@ -45,9 +45,9 @@ follow the steps below to create the service described earlier:
         > EOF
 
     there are a couple of important things to note about the service declaration above:
-        - `ConditionPathExists` prevents the service from executing if the path does not exist.
-        - `EnvironmentFile` specifies the location of the configuration file for the service. this is where the values for _${param_foo}_ and _${param_bar}_ are loaded from.
-        - `ExecStart` specifies a command to execute upon starting the service.
+    * `ConditionPathExists` prevents the service from executing if the path does not exist.
+    * `EnvironmentFile` specifies the location of the configuration file for the service. this is where the values for _${param_foo}_ and _${param_bar}_ are loaded from.
+    * `ExecStart` specifies a command to execute upon starting the service.
 
 3. create the `myservice.conf` configuration file in the `/etc` directory:
 
