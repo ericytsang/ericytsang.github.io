@@ -1,4 +1,6 @@
 * [Introduction](./content/introduction.md)
+* BluText
+    * [Setup BluText](./content/blutext/1-setup.md)
 * Android Tutorials
     * [Creating a Kotlin Android Project](./content/android-tutorials/tutorial.add-kotlin-to-android.md)
 * Arch Linux Adventures
