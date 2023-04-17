@@ -39,21 +39,6 @@
       </header>
 
       <section>
-        {% include navigation.html %}
-        <ul>
-          {% for collection in site.collections %}
-          <li><a href="{{ collection.relative_directory }}">{{ collection.label }}</a>
-            <ul>
-              {% for document in collection.docs %}
-              <li><a href="{{ document.url }}">{{ document.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </li>
-          {% endfor %}
-        </ul>
-      </section>
-
-      <section>
           <h1>{{ page.title | page.name }}</h1>
           {{ content }}
       </section>
