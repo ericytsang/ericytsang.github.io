@@ -4,6 +4,9 @@ show_downloads: false
 google_analytics:
 theme: jekyll-theme-dinky
 collections:
-  - android-tutorials
-  - archlinux-adventures
-  - blutext
+  android-tutorials:
+    output: true
+  archlinux-adventures:
+    output: true
+  blutext:
+    output: true
