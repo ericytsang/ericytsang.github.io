@@ -14,4 +14,4 @@
     * Miscellaneous
         * [Bluetooth](./content/archlinux-adventures/3-miscellaneous/bluetooth.md)
         * [Tips and Tricks](./content/archlinux-adventures/3-miscellaneous/tips-and-tricks.md)
-* [Site Map](./index.md)
+* [Site Map](../index.md)
