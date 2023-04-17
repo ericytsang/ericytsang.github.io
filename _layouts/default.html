@@ -26,9 +26,8 @@
           {% endif %}
           
           {{ site.collections }}
-          {% include navigation.html %}
-          {% include navigation %}
-          {{ navigation }}
+          {% render navigation %}
+          {% render navigation.md %}
           <li><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></li>
         </ul>
 
