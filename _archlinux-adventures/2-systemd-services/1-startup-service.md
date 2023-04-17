@@ -1,3 +1,6 @@
+---
+title: Service Basics
+---
 # Using Services
 
 - `systemctl enable [service]` - registers the _`[service]`_ to be `start`ed upon system bootup.

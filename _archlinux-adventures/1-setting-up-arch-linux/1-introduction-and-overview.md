@@ -1,3 +1,6 @@
+---
+title: Introduction and Overview
+---
 # Introduction
 
 this section is a tutorial about how to install Arch Linux onto a UEFI boot-loaded machine.
@@ -5,7 +8,7 @@ this section is a tutorial about how to install Arch Linux onto a UEFI boot-load
 Arch Linux is a "bare-bones" distribution of Linux. it doesn't even come with a GUI or any wireless capabilities! but going through this tutorial will force you to learn more about the Linux operating system and the things that are usually taken care for you on other distributions of Linux. no pain no gain!
 
 # Overview
-
+[1-introduction-and-overview.md](1-introduction-and-overview.md)
 this tutorial covers:
 
 1. acquiring the Arch Linux image

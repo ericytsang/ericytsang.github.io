@@ -1,3 +1,6 @@
+---
+title: Bluetooth
+---
 # Introduction
 
 this section has instructions on creating a service that runs upon booting into the Arch Linux system, before the login prompt is shown.

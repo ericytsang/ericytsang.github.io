@@ -1,3 +1,6 @@
+---
+title: Install Arch Linux
+---
 # Overview
 
 the sections in this page cover:

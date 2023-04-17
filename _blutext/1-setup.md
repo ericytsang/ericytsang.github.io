@@ -1,3 +1,6 @@
+---
+title: Setup BluText
+---
 ![install client on tablet and server on phone](http://i.imgur.com/pwxd0YI.jpg)
 1. Install [BluText Client](https://play.google.com/store/apps/details?id=com.github.ericytsang.blutext.app.client) on the device you want to browse and compose SMS messages on (e.g. tablet).
 2. Install [BluText Server](https://play.google.com/store/apps/details?id=com.github.ericytsang.blutext.app.server) on the device you want to send SMS messages from (e.g. phone).
