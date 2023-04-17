@@ -39,6 +39,7 @@
       </header>
 
       <section>
+        {% include navigation.html %}
         <ul>
           {% for collection in site.collections %}
           <li><a href="{{ collection.relative_directory }}">{{ collection.label }}</a>
